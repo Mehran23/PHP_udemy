@@ -9,8 +9,17 @@
 <body>
     <?php
     
-    
-    
+    $number = ['Mehran', 'damian', 'james'];
+
+    //print_r($number);
+
+   echo $number[0] . "<br>";
+echo "<br>";
+    $names = ["first_name" => 'Will' , "Last_Name" => 'Diaz'];
+
+   // print_r($names);
+  
+    echo $names['first_name'] . " " . $names ['Last_Name'];
     
     ?>
 </body>
