@@ -9,8 +9,35 @@
 <body>
     <?php 
     
+    function init(){
+
+        
+        say_Something();
+        echo "<br>";
+        calculate();
+
+    }
     
+    function calculate(){
+
+
+        echo 500 + 900;
+
+
+    }
+
+    function say_Something(){
+
+
+        echo "Hello boys, do you like pizza? yes? okay :D";
     
+        
+        }
+
+
+     init();      
+
+
     ?>
 </body>
 </html>
