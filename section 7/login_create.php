@@ -1,4 +1,4 @@
-<?php 
+<?php include "db.php";
 
 if(isset($_POST['submit'])) {
 
@@ -7,14 +7,6 @@ $password = $_POST['password'];
 
     
 
- $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
- 
- 
-    if(!$connection) {
-
-    echo die("Database connection failed");
-
-}
 
 $query = "INSERT INTO users(username, password)";
 $query .= "VALUES ('$username', '$password')";
