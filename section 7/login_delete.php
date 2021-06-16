@@ -8,7 +8,7 @@
 <div class="container">
     
     <div class="col-sm-6">
-        <h1 class="text-center">Update</h1>
+        <h1 class="text-center">Delete</h1>
      <form action="login_delete.php" method="post">
             <div class="form-group">
             <label for="username">Username</label>
