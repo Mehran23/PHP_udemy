@@ -18,6 +18,17 @@ $password = $_POST['password'];
     die("Database connection failed");
 
 }
+
+$query = "INSERT INTO users(username, password)";
+$query .= "VALUES ('$username', '$password')";
+
+
+$result = mysqli_query($connection, $query);
+
+
+if(!$result) {
+    die('query FAILED');
+}
 }
 
     
@@ -41,7 +52,7 @@ $password = $_POST['password'];
 <div class="container">
 
     <div class="col-sm-6"></div>
-    <form action="login.php" method="POST">
+    <form action="login_create.php" method="POST">
         <div class="form-group">
         <label for="username">Username</label>
         <input type="text" name="username" class="form-control">

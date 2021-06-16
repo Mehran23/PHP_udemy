@@ -1,33 +1,32 @@
-<?php 
+<?php include "db.php";?>
+<?php include "login_functions.php";?>
 
+
+
+<?php
 if(isset($_POST['submit'])) {
+
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$id = $_POST['id'];
 
-    
-
- $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
+$query = "UPDATE users SET ";
+$query .= "username = '$username' ";
+$query .= "password = '$password' ";
+$query .= "WHERE id = '$id' ";
  
- 
-    if($connection) {
+    $result = mysqli_query($connection, $query);
 
-    echo "We are connected";
-    }  else {
+    if(!$result) {
+         
+        die("QUERY FAILED" . mysqli_error($connection));
 
-    die("Database connection failed");
-
-}
+    }
 }
 
-    
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +40,7 @@ $password = $_POST['password'];
 <div class="container">
 
     <div class="col-sm-6"></div>
-    <form action="login.php" method="POST">
+    <form action="login_create.php" method="POST">
         <div class="form-group">
         <label for="username">Username</label>
         <input type="text" name="username" class="form-control">
@@ -52,7 +51,21 @@ $password = $_POST['password'];
         <input type="password" name="password" class="form-control">
         </div>
 
-        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+        <div class="form-group">
+
+        <select name="id" id="">
+       
+        <?php  
+        
+        showAllData();
+        
+        ?>
+
+        
+        </select>
+        </div>
+
+        <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
 
 
     </form>
