@@ -10,12 +10,9 @@ $password = $_POST['password'];
  $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
  
  
-    if($connection) {
+    if(!$connection) {
 
-    echo "We are connected";
-    }  else {
-
-    die("Database connection failed");
+    echo die("Database connection failed");
 
 }
 
